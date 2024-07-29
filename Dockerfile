@@ -11,6 +11,6 @@ ENV S3_ENDPOINT_URL=http://localstack:4566
 COPY train_model.py /app/train_model.py
 COPY predict.py /app/predict.py
 
-CMD ["python", "/app/train_model.py"]
-ENTRYPOINT ["python", "/app/predict.py"]
+#CMD ["python", "/app/train_model.py"]
+#ENTRYPOINT ["python", "/app/predict.py"]
 

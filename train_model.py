@@ -54,14 +54,6 @@ def save_model(model) -> None:
         s3.create_bucket(Bucket=bucket_name)
         print(f"Bucket {bucket_name} created")
 
-        s3 = boto3.client(
-            "s3",
-            endpoint_url=S3_ENDPOINT_URL,
-            aws_access_key_id="abc",
-            aws_secret_access_key="xyz",
-            region_name="us-east-1",
-        )
-        bucket_name = "localstack-bucket"
         s3.upload_file(output_file, bucket_name, output_file)
         print(f"Model saved and uploaded to {bucket_name}/{output_file}")
 
